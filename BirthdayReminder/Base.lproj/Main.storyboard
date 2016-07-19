@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="1369" y="404"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Birthday View Controller-->
         <scene sceneID="5rs-Yj-IAs">
             <objects>
-                <viewController id="nd0-Kq-gTm" sceneMemberID="viewController">
+                <viewController id="nd0-Kq-gTm" customClass="AddBirthdayViewController" customModule="BirthdayReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qKG-1c-bf1"/>
                         <viewControllerLayoutGuide type="bottom" id="IW9-9A-W1q"/>
@@ -79,8 +79,52 @@
                     <view key="view" contentMode="scaleToFill" id="A04-zM-Tb1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HuS-Q7-cLG">
+                                <rect key="frame" x="20" y="80" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LmT-Kn-aUY">
+                                <rect key="frame" x="20" y="118" width="560" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="490654028.49272901">
+                                    <!--2016-07-19 20:47:08 +0000-->
+                                </date>
+                            </datePicker>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="BX3-xT-mRp">
+                                <rect key="frame" x="18" y="371" width="564" height="31"/>
+                                <connections>
+                                    <action selector="daysBeforeChanged:" destination="nd0-Kq-gTm" eventType="valueChanged" id="q4u-Ia-V0r"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iww-Ha-XSX">
+                                <rect key="frame" x="20" y="342" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iww-Ha-XSX" firstAttribute="top" secondItem="LmT-Kn-aUY" secondAttribute="bottom" constant="8" id="9ga-rd-guq"/>
+                            <constraint firstItem="LmT-Kn-aUY" firstAttribute="top" secondItem="HuS-Q7-cLG" secondAttribute="bottom" constant="8" id="Avo-s6-an3"/>
+                            <constraint firstItem="BX3-xT-mRp" firstAttribute="top" secondItem="iww-Ha-XSX" secondAttribute="bottom" constant="8" id="KeO-PD-wWK"/>
+                            <constraint firstItem="iww-Ha-XSX" firstAttribute="leading" secondItem="A04-zM-Tb1" secondAttribute="leadingMargin" id="M0R-tr-aBP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iww-Ha-XSX" secondAttribute="trailing" id="Yqi-Ig-YEv"/>
+                            <constraint firstItem="HuS-Q7-cLG" firstAttribute="top" secondItem="qKG-1c-bf1" secondAttribute="bottom" constant="16" id="aX9-rt-nSm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BX3-xT-mRp" secondAttribute="trailing" id="cId-7Z-VWs"/>
+                            <constraint firstItem="BX3-xT-mRp" firstAttribute="leading" secondItem="A04-zM-Tb1" secondAttribute="leadingMargin" id="chE-Ac-jj1"/>
+                            <constraint firstItem="iww-Ha-XSX" firstAttribute="leading" secondItem="A04-zM-Tb1" secondAttribute="leadingMargin" id="g5D-AH-TUC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LmT-Kn-aUY" secondAttribute="trailing" id="hx6-Ch-02u"/>
+                            <constraint firstItem="iww-Ha-XSX" firstAttribute="trailing" secondItem="A04-zM-Tb1" secondAttribute="trailingMargin" id="idl-KA-nZq"/>
+                            <constraint firstItem="LmT-Kn-aUY" firstAttribute="leading" secondItem="A04-zM-Tb1" secondAttribute="leadingMargin" id="jqU-gg-g01"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HuS-Q7-cLG" secondAttribute="trailing" id="olF-bu-Lv6"/>
+                            <constraint firstItem="HuS-Q7-cLG" firstAttribute="leading" secondItem="A04-zM-Tb1" secondAttribute="leadingMargin" id="sub-7F-acj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="daysBeforeLabel" destination="iww-Ha-XSX" id="0bB-g3-M6a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4u-mT-6hl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

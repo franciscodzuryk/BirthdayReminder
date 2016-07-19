@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B947B291D3EC9E5003F9D8F /* AddBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B947B281D3EC9E5003F9D8F /* AddBirthdayViewController.swift */; };
 		0BBC47611D3EC3B20006EDDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC47601D3EC3B20006EDDE /* AppDelegate.swift */; };
 		0BBC47631D3EC3B20006EDDE /* BirthdayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC47621D3EC3B20006EDDE /* BirthdayTableViewController.swift */; };
 		0BBC47661D3EC3B20006EDDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BBC47641D3EC3B20006EDDE /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B947B281D3EC9E5003F9D8F /* AddBirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBirthdayViewController.swift; sourceTree = "<group>"; };
 		0BBC475D1D3EC3B20006EDDE /* BirthdayReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BBC47601D3EC3B20006EDDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BBC47621D3EC3B20006EDDE /* BirthdayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayTableViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				0BBC47601D3EC3B20006EDDE /* AppDelegate.swift */,
 				0BBC47621D3EC3B20006EDDE /* BirthdayTableViewController.swift */,
+				0B947B281D3EC9E5003F9D8F /* AddBirthdayViewController.swift */,
 				0BBC47641D3EC3B20006EDDE /* Main.storyboard */,
 				0BBC47671D3EC3B20006EDDE /* Assets.xcassets */,
 				0BBC47691D3EC3B20006EDDE /* LaunchScreen.storyboard */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BBC47631D3EC3B20006EDDE /* BirthdayTableViewController.swift in Sources */,
+				0B947B291D3EC9E5003F9D8F /* AddBirthdayViewController.swift in Sources */,
 				0BBC47611D3EC3B20006EDDE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
