@@ -41,7 +41,7 @@ En resumen listamos los casos de uso que éste tiene:
 **4** Listar todas las fechas de cumpleaños.
 
 
-## Manos a la obra
+## Caracteristicas de los test unitarios
 
 Antes escribir nuestro primer test debemos tener claro algunos concepto y/o características de los test unitarios:
 
@@ -51,3 +51,9 @@ Antes escribir nuestro primer test debemos tener claro algunos concepto y/o cara
 
 
 **Colaboración:** Ciertas unidades testeables dependen de otras para poder funcionar. Imaginemos que tenemos una clase llamada Factura, la cual vamos a testear el método que calcula el total de una factura. Este método consume la clase productos y a la vez ejecuta el método calcular precios de la mismo. Como se ve, calcular total depende de calcular precio. Es aquí donde surgen 2 nuevos conceptos, test sociables y test solitarios. Los sociables son aquellos donde sus dependencias no se aíslan, mientras que los solitarios por lo contrario son aislados completamente. En nuestro ejemplo usaremos test solitarios.
+
+## Manos a la obra
+Llegó la hora de escribir nuestro primer test, y para ello necesitamos un caso de prueba. Nuestro caso será crear un reminder. Acontinuación se visualiza un diagrama de interaccion para ver mejor cómo se comunican la entidades de la aplicación.
+
+
+
