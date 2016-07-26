@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B151C451D40209200FCE436 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B151C441D40209200FCE436 /* Birthday.swift */; };
 		0B151C481D4024E700FCE436 /* BirthdayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B151C471D4024E700FCE436 /* BirthdayManager.swift */; };
+		0B5142EA1D47AAD600D320EB /* BirthdayData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B5142E91D47AAD600D320EB /* BirthdayData.plist */; };
 		0B947B291D3EC9E5003F9D8F /* AddBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B947B281D3EC9E5003F9D8F /* AddBirthdayViewController.swift */; };
 		0BBC47611D3EC3B20006EDDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC47601D3EC3B20006EDDE /* AppDelegate.swift */; };
 		0BBC47631D3EC3B20006EDDE /* BirthdayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC47621D3EC3B20006EDDE /* BirthdayTableViewController.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		0B151C441D40209200FCE436 /* Birthday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
 		0B151C471D4024E700FCE436 /* BirthdayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayManager.swift; sourceTree = "<group>"; };
+		0B5142E91D47AAD600D320EB /* BirthdayData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BirthdayData.plist; sourceTree = "<group>"; };
 		0B947B281D3EC9E5003F9D8F /* AddBirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBirthdayViewController.swift; sourceTree = "<group>"; };
 		0BBC475D1D3EC3B20006EDDE /* BirthdayReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BBC47601D3EC3B20006EDDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				0BBC47671D3EC3B20006EDDE /* Assets.xcassets */,
 				0BBC47691D3EC3B20006EDDE /* LaunchScreen.storyboard */,
 				0BBC476C1D3EC3B20006EDDE /* Info.plist */,
+				0B5142E91D47AAD600D320EB /* BirthdayData.plist */,
 			);
 			path = BirthdayReminder;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BBC476B1D3EC3B20006EDDE /* LaunchScreen.storyboard in Resources */,
+				0B5142EA1D47AAD600D320EB /* BirthdayData.plist in Resources */,
 				0BBC47681D3EC3B20006EDDE /* Assets.xcassets in Resources */,
 				0BBC47661D3EC3B20006EDDE /* Main.storyboard in Resources */,
 			);

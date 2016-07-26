@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   BirthdayData.plist
-   BirthdayReminder
-
-   Created by Francisco on 7/26/16.
-   Copyright (c) 2016 Francisco. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<dict>
+	<key>0</key>
+	<dict>
+		<key>title</key>
+		<string>Some Title 0</string>
+		<key>date</key>
+		<date>2016-07-26T17:24:42Z</date>
+		<key>daysBefore</key>
+		<integer>0</integer>
+	</dict>
+	<key>1</key>
+	<dict>
+		<key>title</key>
+		<string>Some Title 1</string>
+		<key>date</key>
+		<date>2016-07-26T17:24:42Z</date>
+		<key>daysBefore</key>
+		<integer>1</integer>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>title</key>
+		<string>Some Title 2</string>
+		<key>date</key>
+		<date>2016-07-26T17:24:42Z</date>
+		<key>daysBefore</key>
+		<integer>2</integer>
+	</dict>
+	<key>3</key>
+	<dict>
+		<key>title</key>
+		<string>Some Title 3</string>
+		<key>date</key>
+		<date>2016-07-26T17:24:42Z</date>
+		<key>daysBefore</key>
+		<integer>3</integer>
+	</dict>
+</dict>
 </plist>

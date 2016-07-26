@@ -11,7 +11,17 @@ import Foundation
 class Birthday {
     var title = ""
     var date = NSDate()
-    var daysBefore = 1
+    var daysBefore = NSNumber(int: 1)
+    
+    init() {
+        
+    }
+    
+    init (data: NSDictionary) {
+        title = data["title"] as! String
+        date = data["date"] as! NSDate
+        daysBefore = data["daysBefore"] as! NSNumber
+    }
     
     func isValid() -> Bool {
         return !title.isEmpty
