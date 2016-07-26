@@ -33,8 +33,8 @@ En resumen listamos los casos de uso que éste tiene:
 **1** Crear un recordatorio
   * Validar dados.
   * Persistir datos.
-  * 
-**2** Eliminar una fecha fecha de cumplaños
+
+**2** Eliminar una fecha fecha de cumpleaños
 
 **3** Modificar una fecha de cumpleaños
 
