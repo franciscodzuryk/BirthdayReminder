@@ -3,18 +3,42 @@
 ## Intoducción
 Unit Testing es el proceso mediante el cual las partes más pequeñas de una aplicación, llamadas unidades, son validadas de forma individual e independiente para corroborar que su comportamiento sea consistente.
 
-Son muchas las ventajas las que se obtienen cuando se implementan test unitarios en una aplicación, y es por ello que esta buena práctica está cada vez siendo más adoptada en los nuevos desarrollos. Acontinuación enumeramos las más valiosas:
+Son muchas las ventajas las que se obtienen cuando se implementan test unitarios en una aplicación, y es por ello que esta buena práctica está cada vez siendo más adoptada en los nuevos desarrollos. Acontinuación enumeramos algunas de ellas:
 
-* Reduce el número bugs en las aplicaciones.
-* Ahorra de tiempo de desarrollo.
-* Hace mas fácil el cambio y refactor de código.
-* Mejora la calidad y diseño de código de las aplicaciones.
-* Inspira confianza en tu propio código.
-* Ayuda afrontar los problemas de antemano.
+**1.** Reduce el número bugs en las aplicaciones.
+
+**2.** Ahorra de tiempo de desarrollo.
+
+**3.** Hace mas fácil el cambio y refactor de código.
+
+**4.** Mejora la calidad y diseño de código de las aplicaciones.
+
+**5.** Inspira confianza en tu propio código.
+
+**6.** Ayuda afrontar los problemas de antemano.
 
 Pues bien, si eres desarrollador y estás interesado en aprender nuevas habilidades de programación para tus futuros proyectos, definitivamente esta es una de las más importantes, si no es la más importante.
 
 En este post vamos a explicar como implementar test unitarios usando como ejemplo una aplicación que previamente hemos realizado. También explicaremos en detalle las principales características que deben tener los test y algunas técnicas.
+
+
+## Birthday Reminder
+
+La aplicación que vamos a usar como base para hacer test se llamada birthday reminder, lo pueden clonar desde [aqui](https://github.com/franciscodzuryk/BirthdayReminder) en github
+
+El proyecto consiste en  gestionar fechas de cumpleaños y la idea es que la aplicación le recuerde al usuario con cierta anticipación que un cumpleaños esta cerca.
+
+En resumen listamos los casos de uso que éste tiene:
+
+**1** Crear un recordatorio
+  * Validar dados.
+  * Persistir datos.
+  * 
+**2** Eliminar una fecha fecha de cumplaños
+
+**3** Modificar una fecha de cumpleaños
+
+**4** Listar todas las fechas de cumpleaños.
 
 
 ## Manos a la obra
