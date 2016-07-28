@@ -9,6 +9,7 @@
 import Foundation
 
 class Birthday {
+    var identifier = ""
     var title = ""
     var date = NSDate()
     var daysBefore = NSNumber(int: 1)
@@ -17,10 +18,15 @@ class Birthday {
         
     }
     
-    init (data: NSDictionary) {
+    init (key: String, data: NSDictionary) {
+        identifier = key
         title = data["title"] as! String
         date = data["date"] as! NSDate
         daysBefore = data["daysBefore"] as! NSNumber
+    }
+    
+    func getDictionary() -> NSDictionary {
+        return NSDictionary(objects: [title, date, daysBefore], forKeys: ["title", "date", "daysBefore"])
     }
     
     func isValid() -> Bool {

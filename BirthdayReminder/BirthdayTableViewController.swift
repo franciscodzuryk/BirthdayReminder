@@ -8,18 +8,45 @@
 
 import UIKit
 
-class BirthdayTableViewController: UITableViewController {
+class BirthdayTableViewController: UITableViewController, AddBirthdayDelegate {
     let kCellIdentifier = "BirthdayCell"
     let manager = BirthdayManager()!
-    //var items = ["item 1", "item 2", "item 3"]
+    var items: Array<Birthday>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        items = manager.list.sort({ (a, b) -> Bool in
+            a.title < b.title
+        })
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let addVC = segue.destinationViewController as! AddBirthdayViewController
+        addVC.delegate = self
+        
+        if segue.identifier == "updateBirthdayIdentifier" {
+            let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell);
+            addVC.indexPath = indexPath
+            addVC.birthday = items![(indexPath?.row)!]
+        }
+    }
+    
+    func birthdayDidAdd(birthday: Birthday) -> Void {
+        manager.add(birthday)
+        items = manager.list.sort({ (a, b) -> Bool in
+            a.title < b.title
+        })
+        tableView.reloadData()
+    }
+    
+    func birthdayDidUpdate(birthday: Birthday, indexPath: NSIndexPath) -> Void {
+        manager.update(birthday)
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
     @IBAction func enterInEditMode(sender: UIBarButtonItem) {
@@ -34,12 +61,12 @@ class BirthdayTableViewController: UITableViewController {
 
     // MARK: TableView DataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return manager.list.count
+        return items!.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! BirthdayCell
-        cell.configure(manager.list[indexPath.row])
+        cell.configure(items![indexPath.row])
         return cell
     }
     
@@ -50,7 +77,8 @@ class BirthdayTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            manager.delete(manager.list[indexPath.row])
+            manager.delete(items![indexPath.row])
+            items?.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
     }

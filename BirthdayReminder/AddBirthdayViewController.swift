@@ -8,12 +8,32 @@
 
 import UIKit
 
+protocol AddBirthdayDelegate {
+    func birthdayDidAdd(birthday: Birthday) -> Void
+    func birthdayDidUpdate(birthday: Birthday, indexPath: NSIndexPath) -> Void
+}
+
 class AddBirthdayViewController: UIViewController {
     @IBOutlet weak var daysBeforeLabel: UILabel!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var birthdayDatePicker: UIDatePicker!
+    @IBOutlet weak var daysBeforeSlider: UISlider!
+    
+    
+    var delegate: AddBirthdayDelegate?
+    var birthday: Birthday?
+    var indexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        daysBeforeLabel.text = "Notify 1 days before"
+        if birthday == nil {
+            birthday = Birthday()
+        }
+        
+        titleTextField.text = birthday?.title
+        birthdayDatePicker.date = (birthday?.date)!
+        daysBeforeSlider.value = (birthday?.daysBefore.floatValue)!
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,5 +44,19 @@ class AddBirthdayViewController: UIViewController {
     @IBAction func daysBeforeChanged(sender: UISlider) {
         let days = NSNumber(float: round(sender.value))
         daysBeforeLabel.text = "Notify \(days.intValue) days before"
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        birthday?.title = titleTextField.text!
+        birthday?.date = birthdayDatePicker.date
+        birthday?.daysBefore = NSNumber(float: round(daysBeforeSlider.value))
+
+        if indexPath == nil {
+            delegate?.birthdayDidAdd(birthday!)
+            
+        } else {
+            delegate?.birthdayDidUpdate(birthday!, indexPath: indexPath!)
+        }
+        
     }
 }

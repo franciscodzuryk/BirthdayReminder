@@ -32,19 +32,26 @@ class BirthdayManager: BirthdayManagerProtocol {
     
     func add(birthday: Birthday) {
         print("Add")
+        birthday.identifier = String(birthdayData.count)
+        birthdayData.setObject(birthday.getDictionary(), forKey: birthday.identifier)
+        birthdayData.writeToFile(filePath, atomically: false)
     }
     
     func delete(birthday: Birthday) {
         print("Delete")
+        birthdayData.removeObjectForKey(birthday.identifier)
+        birthdayData.writeToFile(filePath, atomically: false)
     }
     
     func update(birthday: Birthday) {
         print("Update")
+        birthdayData.setObject(birthday.getDictionary(), forKey: birthday.identifier)
+        birthdayData.writeToFile(filePath, atomically: false)
     }
     
     func list(predicate: ((birthday: Birthday) -> Bool)?) -> Array<Birthday> {
         let arr = birthdayData.map { (key, value) in
-            return Birthday(data: value as! NSDictionary)
+            return Birthday(key: key as! String, data: value as! NSDictionary)
         }
         
         if predicate != nil {
