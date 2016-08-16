@@ -12,13 +12,13 @@ protocol BirthdayManagerProtocol {
     func add(birthday: Birthday) -> Void
     func delete(birthday: Birthday) -> Void
     func update(birthday: Birthday) -> Void
-    func list(predicate: ((birthday: Birthday) -> Bool)?) -> Array<Birthday>
+    func list() -> [Birthday]
 }
 
 class BirthdayManager: BirthdayManagerProtocol {
-    var list: Array<Birthday> { get { return list(nil)} }
     let birthdayData : NSMutableDictionary
     let filePath: String
+    
     convenience init?() {
         guard let path = NSBundle.mainBundle().pathForResource("BirthdayData", ofType: "plist") else { return nil }
         guard let data = NSMutableDictionary(contentsOfFile: path) else { return nil }
@@ -32,7 +32,6 @@ class BirthdayManager: BirthdayManagerProtocol {
     
     func add(birthday: Birthday) {
         print("Add")
-        birthday.identifier = String(birthdayData.count)
         birthdayData.setObject(birthday.getDictionary(), forKey: birthday.identifier)
         birthdayData.writeToFile(filePath, atomically: false)
     }
@@ -49,14 +48,11 @@ class BirthdayManager: BirthdayManagerProtocol {
         birthdayData.writeToFile(filePath, atomically: false)
     }
     
-    func list(predicate: ((birthday: Birthday) -> Bool)?) -> Array<Birthday> {
+    func list() -> [Birthday] {
         let arr = birthdayData.map { (key, value) in
             return Birthday(key: key as! String, data: value as! NSDictionary)
         }
         
-        if predicate != nil {
-            return arr.filter(predicate!)
-        }
         return arr
     }
 }

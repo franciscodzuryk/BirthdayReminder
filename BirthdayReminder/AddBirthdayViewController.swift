@@ -10,7 +10,7 @@ import UIKit
 
 protocol AddBirthdayDelegate {
     func birthdayDidAdd(birthday: Birthday) -> Void
-    func birthdayDidUpdate(birthday: Birthday, indexPath: NSIndexPath) -> Void
+    func birthdayDidUpdate(birthday: Birthday) -> Void
 }
 
 class AddBirthdayViewController: UIViewController {
@@ -21,19 +21,20 @@ class AddBirthdayViewController: UIViewController {
     
     
     var delegate: AddBirthdayDelegate?
-    var birthday: Birthday?
-    var indexPath: NSIndexPath?
+    var birthday: Birthday!
+    var isUpdating = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if birthday == nil {
             birthday = Birthday()
+            isUpdating = false;
         }
         
-        titleTextField.text = birthday?.title
-        birthdayDatePicker.date = (birthday?.date)!
-        daysBeforeSlider.value = (birthday?.daysBefore.floatValue)!
-
+        titleTextField.text = birthday.title
+        birthdayDatePicker.date = birthday.date
+        daysBeforeSlider.value = birthday.daysBefore.floatValue
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,16 +48,19 @@ class AddBirthdayViewController: UIViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        birthday?.title = titleTextField.text!
-        birthday?.date = birthdayDatePicker.date
-        birthday?.daysBefore = NSNumber(float: round(daysBeforeSlider.value))
-
-        if indexPath == nil {
-            delegate?.birthdayDidAdd(birthday!)
-            
-        } else {
-            delegate?.birthdayDidUpdate(birthday!, indexPath: indexPath!)
-        }
+        super.viewWillDisappear(animated)
+        saveBirthday()
+    }
+    
+    func saveBirthday() {
+        birthday.title = titleTextField.text!
+        birthday.date = birthdayDatePicker.date
+        birthday.daysBefore = NSNumber(float: round(daysBeforeSlider.value))
         
+        if isUpdating {
+            delegate?.birthdayDidUpdate(birthday)
+        } else {
+            delegate?.birthdayDidAdd(birthday)
+        }        
     }
 }

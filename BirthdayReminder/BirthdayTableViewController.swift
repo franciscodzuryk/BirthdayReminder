@@ -10,12 +10,16 @@ import UIKit
 
 class BirthdayTableViewController: UITableViewController, AddBirthdayDelegate {
     let kCellIdentifier = "BirthdayCell"
-    let manager = BirthdayManager()!
+    var manager: BirthdayManagerProtocol!
     var items: Array<Birthday>?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        items = manager.list.sort({ (a, b) -> Bool in
+        
+        manager = BirthdayManager()
+        
+        items = manager.list().sort({ (a, b) -> Bool in
             a.title < b.title
         })
     }
@@ -31,22 +35,25 @@ class BirthdayTableViewController: UITableViewController, AddBirthdayDelegate {
         
         if segue.identifier == "updateBirthdayIdentifier" {
             let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell);
-            addVC.indexPath = indexPath
             addVC.birthday = items![(indexPath?.row)!]
         }
     }
     
     func birthdayDidAdd(birthday: Birthday) -> Void {
         manager.add(birthday)
-        items = manager.list.sort({ (a, b) -> Bool in
+        refreshData()
+    }
+    
+    func refreshData(){
+        items = manager.list().sort({ (a, b) -> Bool in
             a.title < b.title
         })
         tableView.reloadData()
     }
     
-    func birthdayDidUpdate(birthday: Birthday, indexPath: NSIndexPath) -> Void {
+    func birthdayDidUpdate(birthday: Birthday) -> Void {
         manager.update(birthday)
-        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        refreshData()
     }
 
     @IBAction func enterInEditMode(sender: UIBarButtonItem) {

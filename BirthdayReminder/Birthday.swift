@@ -9,13 +9,13 @@
 import Foundation
 
 class Birthday {
-    var identifier = ""
+    var identifier: String
     var title = ""
     var date = NSDate()
     var daysBefore = NSNumber(int: 1)
     
     init() {
-        
+        self.identifier = NSUUID().UUIDString
     }
     
     init (key: String, data: NSDictionary) {
