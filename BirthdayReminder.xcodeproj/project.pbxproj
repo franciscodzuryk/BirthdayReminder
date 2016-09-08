@@ -16,7 +16,11 @@
 		0BBC47661D3EC3B20006EDDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BBC47641D3EC3B20006EDDE /* Main.storyboard */; };
 		0BBC47681D3EC3B20006EDDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BBC47671D3EC3B20006EDDE /* Assets.xcassets */; };
 		0BBC476B1D3EC3B20006EDDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BBC47691D3EC3B20006EDDE /* LaunchScreen.storyboard */; };
-		0BBC47761D3EC3B20006EDDE /* BirthdayReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC47751D3EC3B20006EDDE /* BirthdayReminderTests.swift */; };
+		5DFAC9E61D7EEC58004679D6 /* AddBirthdayVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAC9E51D7EEC58004679D6 /* AddBirthdayVCTests.swift */; };
+		5DFAC9E81D7EFFE2004679D6 /* BirthdayTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAC9E71D7EFFE2004679D6 /* BirthdayTableVC.swift */; };
+		5DFAC9EA1D7F1A16004679D6 /* BirthdayManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAC9E91D7F1A16004679D6 /* BirthdayManagerTests.swift */; };
+		5DFAC9EC1D804944004679D6 /* BirthdayNotficator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAC9EB1D804944004679D6 /* BirthdayNotficator.swift */; };
+		5DFAC9F01D818B6A004679D6 /* BirthdayNotficatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFAC9EF1D818B6A004679D6 /* BirthdayNotficatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +46,12 @@
 		0BBC476A1D3EC3B20006EDDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BBC476C1D3EC3B20006EDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BBC47711D3EC3B20006EDDE /* BirthdayReminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BirthdayReminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BBC47751D3EC3B20006EDDE /* BirthdayReminderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayReminderTests.swift; sourceTree = "<group>"; };
 		0BBC47771D3EC3B20006EDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DFAC9E51D7EEC58004679D6 /* AddBirthdayVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBirthdayVCTests.swift; sourceTree = "<group>"; };
+		5DFAC9E71D7EFFE2004679D6 /* BirthdayTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayTableVC.swift; sourceTree = "<group>"; };
+		5DFAC9E91D7F1A16004679D6 /* BirthdayManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayManagerTests.swift; sourceTree = "<group>"; };
+		5DFAC9EB1D804944004679D6 /* BirthdayNotficator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayNotficator.swift; sourceTree = "<group>"; };
+		5DFAC9EF1D818B6A004679D6 /* BirthdayNotficatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayNotficatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 				0BBC47691D3EC3B20006EDDE /* LaunchScreen.storyboard */,
 				0BBC476C1D3EC3B20006EDDE /* Info.plist */,
 				0B5142E91D47AAD600D320EB /* BirthdayData.plist */,
+				5DFAC9EB1D804944004679D6 /* BirthdayNotficator.swift */,
 			);
 			path = BirthdayReminder;
 			sourceTree = "<group>";
@@ -102,8 +111,11 @@
 		0BBC47741D3EC3B20006EDDE /* BirthdayReminderTests */ = {
 			isa = PBXGroup;
 			children = (
-				0BBC47751D3EC3B20006EDDE /* BirthdayReminderTests.swift */,
 				0BBC47771D3EC3B20006EDDE /* Info.plist */,
+				5DFAC9E51D7EEC58004679D6 /* AddBirthdayVCTests.swift */,
+				5DFAC9E71D7EFFE2004679D6 /* BirthdayTableVC.swift */,
+				5DFAC9E91D7F1A16004679D6 /* BirthdayManagerTests.swift */,
+				5DFAC9EF1D818B6A004679D6 /* BirthdayNotficatorTests.swift */,
 			);
 			path = BirthdayReminderTests;
 			sourceTree = "<group>";
@@ -213,6 +225,7 @@
 				0B151C451D40209200FCE436 /* Birthday.swift in Sources */,
 				0B151C481D4024E700FCE436 /* BirthdayManager.swift in Sources */,
 				0BBC47631D3EC3B20006EDDE /* BirthdayTableViewController.swift in Sources */,
+				5DFAC9EC1D804944004679D6 /* BirthdayNotficator.swift in Sources */,
 				0B947B291D3EC9E5003F9D8F /* AddBirthdayViewController.swift in Sources */,
 				0BBC47611D3EC3B20006EDDE /* AppDelegate.swift in Sources */,
 			);
@@ -222,7 +235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BBC47761D3EC3B20006EDDE /* BirthdayReminderTests.swift in Sources */,
+				5DFAC9F01D818B6A004679D6 /* BirthdayNotficatorTests.swift in Sources */,
+				5DFAC9E61D7EEC58004679D6 /* AddBirthdayVCTests.swift in Sources */,
+				5DFAC9EA1D7F1A16004679D6 /* BirthdayManagerTests.swift in Sources */,
+				5DFAC9E81D7EFFE2004679D6 /* BirthdayTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

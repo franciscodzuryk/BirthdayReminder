@@ -10,18 +10,15 @@ import UIKit
 
 class BirthdayTableViewController: UITableViewController, AddBirthdayDelegate {
     let kCellIdentifier = "BirthdayCell"
-    var manager: BirthdayManagerProtocol!
+    var manager: BirthdayManagerProtocol = BirthdayManager()!
     var items: Array<Birthday>?
+    var notificator: BirthdayNotficatorProtocol = BirthdayNotficator()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        manager = BirthdayManager()
-        
-        items = manager.list().sort({ (a, b) -> Bool in
-            a.title < b.title
-        })
+        refreshData()
+                
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +38,7 @@ class BirthdayTableViewController: UITableViewController, AddBirthdayDelegate {
     
     func birthdayDidAdd(birthday: Birthday) -> Void {
         manager.add(birthday)
+        notificator.scheduleBirthday(birthday)
         refreshData()
     }
     
@@ -53,6 +51,7 @@ class BirthdayTableViewController: UITableViewController, AddBirthdayDelegate {
     
     func birthdayDidUpdate(birthday: Birthday) -> Void {
         manager.update(birthday)
+        notificator.reScheduleBirthday(birthday)
         refreshData()
     }
 

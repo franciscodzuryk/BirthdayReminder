@@ -26,7 +26,11 @@ class AddBirthdayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadData()
+    }
+    
+    func loadData() {
+    
         if birthday == nil {
             birthday = Birthday()
             isUpdating = false;

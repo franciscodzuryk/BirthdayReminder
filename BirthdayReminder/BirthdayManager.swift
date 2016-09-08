@@ -16,7 +16,7 @@ protocol BirthdayManagerProtocol {
 }
 
 class BirthdayManager: BirthdayManagerProtocol {
-    let birthdayData : NSMutableDictionary
+    var birthdayData : NSMutableDictionary
     let filePath: String
     
     convenience init?() {
